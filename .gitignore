@@ -1,0 +1,8 @@
+/.idea/
+composer.lock
+vendor/
+vendor/*
+/vendor/**
+/vendor/
+/vendor/**/.git
+.DS_Store
