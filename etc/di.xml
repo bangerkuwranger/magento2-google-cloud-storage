@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Cms\Model\Wysiwyg\Images\Storage">
+        <plugin name="google_cloud_model_cms_wysiwyg_images_storage_plugin" type="Google\Cloud\Model\Cms\Wysiwyg\Images\Storage\Plugin" />
+    </type>
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="gcsConfigListCommand" xsi:type="object">Google\Cloud\Console\Command\ConfigListCommand</item>
+                <item name="gcsoCnfigSetCommand" xsi:type="object">Google\Cloud\Console\Command\ConfigSetCommand</item>
+                <item name="gcsStorageSyncCommand" xsi:type="object">Google\Cloud\Console\Command\StorageSyncCommand</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\MediaStorage\Block\System\Config\System\Storage\Media\Synchronize">
+        <plugin name="google_cloud_block_mediastorage_system_config_system_storage_media_synchronise_plugin" type="Google\Cloud\Block\MediaStorage\System\Config\System\Storage\Media\Synchronise\Plugin" />
+    </type>
+    <type name="Magento\MediaStorage\Helper\File\Storage\Database">
+        <plugin name="google_cloud_helper_mediastorage_file_storage_database_plugin" type="Google\Cloud\Helper\MediaStorage\File\Storage\Database\Plugin" />
+    </type>
+    <type name="Magento\MediaStorage\Model\Config\Source\Storage\Media\Storage">
+        <plugin name="google_cloud_model_mediastorage_config_source_storage_media_storage_plugin" type="Google\Cloud\Model\MediaStorage\Config\Source\Storage\Media\Storage\Plugin" />
+    </type>
+    <type name="Magento\MediaStorage\Model\File\Storage">
+        <plugin name="google_cloud_model_mediastorage_file_storage_plugin" type="Google\Cloud\Model\MediaStorage\File\Storage\Plugin" />
+    </type>
+    <type name="\Magento\MediaStorage\Model\File\Storage\Database">
+        <plugin name="google_cloud_model_mediastorage_file_storage_database_plugin" type="Google\Cloud\Model\MediaStorage\File\Storage\Database\Plugin" />
+    </type>
+    <type name="\Magento\MediaStorage\Model\File\Storage\Directory\Database">
+        <plugin name="google_cloud_model_mediastorage_file_storage_directory_database_plugin" type="Google\Cloud\Model\MediaStorage\File\Storage\Directory\Database\Plugin" />
+    </type>
+    <type name="Magento\MediaStorage\Model\File\Storage\Synchronization">
+        <plugin name="google_cloud_model_mediastorage_file_storage_synchronisation_plugin" type="Google\Cloud\Model\MediaStorage\File\Storage\Synchronisation\Plugin" />
+    </type>
+    <type name="Magento\ProductVideo\Controller\Adminhtml\Product\Gallery\RetrieveImage">
+        <arguments>
+            <argument name="fileUtility" xsi:type="object">Google\Cloud\Model\ResourceModel\MediaStorage\File\Storage\File</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Store\Model\Store">
+        <plugin name="google_cloud_model_store_store_plugin" type="Google\Cloud\Model\Store\Store\Plugin" />
+    </type>
+</config>

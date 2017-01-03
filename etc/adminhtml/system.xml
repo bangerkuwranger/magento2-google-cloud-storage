@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="cloud_storage" sortOrder="6000000">
+            <label>Google Cloud Storage</label>
+        </tab>
+        <section id="google_cloud" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Google Cloud</label>
+            <tab>cloud_storage</tab>
+            <resource>Google_Cloud::cloud_configuration</resource>
+            <group id="general" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="access_key" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Access Key JSON</label>
+                </field>
+                <field id="project" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Project ID</label>
+                </field>
+                <field id="bucket" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Bucket</label>
+                </field>
+                <field id="region" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Region</label>
+                    <source_model>Google\Cloud\Model\Config\Source\Region</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
