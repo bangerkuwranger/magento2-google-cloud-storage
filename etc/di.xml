@@ -41,4 +41,6 @@
     <type name="Magento\Store\Model\Store">
         <plugin name="google_cloud_model_store_store_plugin" type="Google\Cloud\Model\Store\Store\Plugin" />
     </type>
+	<!-- Rewrite for media temp url --> 
+    <preference for="Magento\Catalog\Model\Product\Media\Config" type="Google\Cloud\Model\Product\Media\Config" />
 </config>
