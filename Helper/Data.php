@@ -16,8 +16,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     {
         if (is_null($this->useGCS)) {
             $currentStorage = (int)$this->scopeConfig->getValue(Storage::XML_PATH_STORAGE_MEDIA);
-			$storage = Storage::STORAGE_MEDIA_GCS;
-			if($storage == 2){
+			if($currentStorage == 2){
 				$this->useGCS = $currentStorage == 0;
 			}else{
 				$this->useGCS = $currentStorage == Storage::STORAGE_MEDIA_GCS;
